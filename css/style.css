@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
+@import url(/css/clash-display.css);
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'ClashDisplay';
     background-color: #F4ECD8;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-.header-container {
+.header-wrapper {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -26,7 +32,7 @@ body {
     margin-top: 20px;
 }
 
-.menu-items {
+.nav-menu {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -34,21 +40,22 @@ body {
     margin-bottom: 20px;
 }
 
-.menu-items .menu {
+.nav-menu .nav-link {
     text-decoration: none;
     color: #000;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-.menu-items .menu:hover {
+.nav-menu .nav-link:hover {
     font-weight: bold;
 }
 
 .main-container {
+    flex: 1;
     margin-bottom: 150px;
 }
 
-.inicio {
+.home {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,15 +65,15 @@ body {
     padding-bottom: 20px;
 }
 
-.inicio-texto {
+.home-texto {
     flex: 1;
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 20px;
     line-height: 1.8;
     text-align: justify;
 }
 
-.mensaje-inicio-titulo {
+.mensaje-home-titulo {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
@@ -125,7 +132,7 @@ body {
 }
 
 .subtitulo-1, .subtitulo-2, .fecha {
-    font-size: 12px;
+    font-size: 14px;
     color: #555;
     margin: 5px 0;
 }
@@ -141,9 +148,18 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
 }
 
-.footer-text, i {
+.footer-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-copyright, i {
     font-size: 14px;
     color: #F4ECD8;
 }
@@ -160,11 +176,7 @@ i:hover {
 
 /* Reseña */
 
-.Titulo-evento{
-    margin-bottom: 30px;
-}
-
-.contenedor-reseña {
+.review-container {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -173,13 +185,13 @@ i:hover {
     padding-bottom: 100px;
 }
 
-.inicio-resena {
+.review-header {
     width: 100%;
     text-align: center;
-    padding-top: 50px;
+    padding: 50px 0 50px 0;
 }
 
-.subtitulo-reseña {
+.review-subtitle {
     margin-bottom: 30px;
 }
 
@@ -191,33 +203,33 @@ i:hover {
     text-align: center;
 }
 
-.resena-parrafo {
+.review-paragraph {
     text-align: justify;
     max-width: 90%;
     margin-bottom: 50px;
     line-height: 1.8;
 }
 
-.resena-img {
+.review-img {
     display: block;
     max-width: 100%;
     margin: 0 auto 50px;
 }
 
-.contenedor-video {
+.video-container {
     margin-bottom: 30px;
 }
 
-/* Evetos */
+/* Eventos */
 
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: start; /* Asegura que todos los elementos comiencen alineados */
-    width: 70%; /* Mantiene el ancho similar al de la reseña */
-    margin: 0 auto 100px auto; /* Centra horizontalmente y agrega espacio inferior */
+    justify-content: center; 
+    align-items: start; 
+    width: 70%;
+    margin: 0 auto 100px auto; 
 }
 
 .galeria-item {
@@ -227,7 +239,7 @@ i:hover {
     text-align: center;
 }
 
-.galeria img {
+.galeria-img {
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -238,4 +250,121 @@ i:hover {
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Celular (max-width: 600px) */
+@media (max-width: 600px) {
+    .header-wrapper {
+        width: 90%;
+    }
+
+
+    .main-container {
+        margin-bottom: 100px;
+    }
+
+    .home {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .reseñas-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "principal"
+            "secundaria-1"
+            "secundaria-2"
+            "secundaria-3";
+    }
+
+    .card-1 {
+        width: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-img {
+        max-width: 100%;
+    }
+}
+
+/* iPad (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-wrapper {
+        width: 80%;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .main-container {
+        margin-bottom: 120px;
+    }
+
+    .home {
+        width: 80%;
+    }
+
+    .reseñas-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "principal principal"
+            "secundaria-1 secundaria-2"
+            "secundaria-3 secundaria-3";
+    }
+
+    .card-1 {
+        width: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .galeria-img {
+        max-width: 100%;
+    }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .header-wrapper {
+        width: 70%;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .main-container {
+        margin-bottom: 150px;
+    }
+
+    .home {
+        width: 70%;
+    }
+
+    .reseñas-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "principal principal principal"
+            "secundaria-1 secundaria-2 secundaria-3";
+    }
+
+    .card-1 {
+        width: 70%;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .galeria-img {
+        max-width: 300px;
+    }
 }
