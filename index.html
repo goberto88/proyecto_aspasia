@@ -4,78 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Sonidos del Odio</title>
-
 </head>
 
 <body>
-
     <header>
         <div class="header-wrapper">
             <div class="logo-wrapper">
-                <img src="/img/logo.png" alt="Sonidos del Odio Logo" class="logo">
+                <img src="/img/bitmap.png" alt="Sonidos del Odio Logo" class="logo">
             </div>
-            <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <nav class="nav-container">
+                <label for="menu-toggle" class="close-btn">
+                    <i class="fa-solid fa-times"></i>
+                </label>
                 <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="#reseñas" class="nav-link">Reseñas</a></li>
-                    <li><a href="#conciertos" class="nav-link">Conciertos</a></li>
-                    <li><a href="#suscríbete" class="nav-link">Suscríbete+</a></li>
+                    <li><a href="event.html" class="nav-link">Eventos</a></li>
+                    <li><a href="#suscríbete" class="nav-link" id="suscribete-btn">Suscríbete+</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <main class="main-container">
         <section class="home">
-            <div class="home-texto">
-                <p class="mensaje-home">Bienvenido al refugio para los amantes de los sonidos intensos donde la música
+            <div class="home-container">
+                <p class="text-home">Bienvenido al refugio para los amantes de los sonidos intensos donde la música
                     es más que ruido y se convierte en un viaje existencial. Aquí, el Metal, el Rock y otros géneros
-                    hallan su lugar en el alma. Suscríbete, descubre nuevas joyas y clásicos.</p>
-                <p class="mensaje-home-titulo">SONIDOS DEL ODIO</p>
+                    hallan su lugar en el alma. Suscríbete, descubre nuevas joyas y clásicos.
+                </p>
             </div>
-            <div class="imagen-container">
-                <img src="/img/logoSection.png" alt="Imagen de Roberto" class="imagen-1">
-            </div>
+            <img src="/img/logoSection.png" alt="Imagen de Roberto" class="imagen-1">
         </section>
-        
 
-        <section class="reseñas-container">
-
-            <article class="card-1">
-                <img src="/img/melvins-1.png" alt="Dos grandes de Denver" class="card-1-image">
-                <h4 class="titulo-1">Lysol el Dro)))ne de los Melvins</h4>
-                <p class="subtitulo-1">El segmento de joyas olvidadas.</p>
-                <p class="fecha">oct 19, 2024</p>
-            </article>
-
-            <article class="card-2">
-                <img src="/img/bloodI-1.jpg" alt="Metallica" class="card-2-image">
-                <h4 class="titulo-2">Dos grandes de Denver</h4>
-                <p class="subtitulo-2">Joyas del 2024</p>
-                <p class="fecha">oct 19, 2024</p>
-            </article>
-
-            <article class="card-2">
-                <img src="/img/bloodI-1.jpg" alt="Metallica" class="card-2-image">
-                <h4 class="titulo-2">Dos grandes de Denver</h4>
-                <p class="subtitulo-2">Joyas del 2024</p>
-                <p class="fecha">oct 19, 2024</p>
-            </article>
-
-            <article class="card-2">
-                <img src="/img/bloodI-1.jpg" alt="Pallbearer - Mind Burns Alive">
-                <h4 class="titulo-2">Pallbearer - Mind Burns Alive</h4>
-                <p class="subtitulo-2">Joyas del 2024</p>
-                <p class="fecha">oct 19, 2024</p>
-            </article>
-
-        </section>
+        <div class="title">
+            <h2 class="review-title" id="reseñas">RESEÑAS SONICAS</h2>
+        </div>
+        <section class="reviews-container" id="reviews-container"></section>
+        <div class="logo-section">
+            <img src="/img/logoSection1.png" alt="logo 3" class="logo-end">
+        </div>
     </main>
+
     <footer>
         <div class="footer-wrapper">
-            <p class="footer-copyright">Roberto Rivas A. &copy; 2025</p>
+            <p class="footer-copyright">Roberto Rivas A. © 2025</p>
             <div class="footer-social">
                 <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
@@ -83,6 +65,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Firebase App y Firestore (versión compat para API global) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Tus scripts -->
+    <script src="/js/script.js"></script>
+    <script src="/js/mail.js"></script>
 </body>
 
 </html>

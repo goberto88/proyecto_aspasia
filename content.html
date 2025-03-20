@@ -1,84 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
     <title>Sonidos del Odio</title>
-
 </head>
-
 <body>
-
     <header>
         <div class="header-wrapper">
             <div class="logo-wrapper">
-                <img src="/img/logo.png" alt="Sonidos del Odio Logo" class="logo">
+                <img src="/img/bitmap.png" alt="Sonidos del Odio Logo" class="logo">
             </div>
-            <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <nav class="nav-container">
+                <label for="menu-toggle" class="close-btn">
+                    <i class="fa-solid fa-times"></i> <!-- Ícono de "X" -->
+                </label>
                 <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="#reseñas" class="nav-link">Reseñas</a></li>
-                    <li><a href="#conciertos" class="nav-link">Conciertos</a></li>
-                    <li><a href="#suscríbete" class="nav-link">Suscríbete+</a></li>
+                    <li><a href="event.html" class="nav-link">Eventos</a></li>
+                    <li><a href="#suscríbete" class="nav-link" id="suscribete-btn">Suscríbete+</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-
     <main>
-
-        <section class="review-container">
-            <div class="review-header">
-                <h2 class="review-title">The Abyss - The Other Side</h2>
-                <h3 class="review-subtitle">El segmento de joyas olvidadas.</h3>
-                <img src="./img/theAbyss-1.jpg" alt="" class="review-img">
-            </div>
-            <div class="articulo">
-                <p class="review-paragraph">Quería hacer mi primer post en Substack sobre joyas perdidas en el tiempo o que fueron muy poco
-                    valoradas. Escuchando esta tarde algo de Black Metal sueco, recordé a The Abyss, un proyecto de
-                    Black Metal orquestado desde la mente del genio Peter Tägtgren, acompañado por sus compañeros de
-                    Hypocrisy, Mikael Hedlund y Lars Szöke. Este proyecto nació en 1994, en pleno auge del Black Metal,
-                    un año en el que muchos álbumes icónicos del género marcaron la escena.</p>
-                <img src="/img/theAbyss-2.png" alt="portada del disco" class="review-img">
-                <p class="review-paragraph">En 1995, desde la cripta de Abyss Studio y bajo el sello Nuclear Blast
-                    Records, salió a la luz un disco que, para muchos, es una obra de arte, pero que el tiempo ha dejado
-                    en el olvido. Se trata de The Other Side, la placa inicial de la trayectoria de esta banda.</p>
-                <img src="#" alt="">
-                <p class="review-paragraph">Este disco cuenta con un total de 8 temas, incluyendo un cover de Hellhammer
-                    ("Massacra"). Desde el primer tema, destaca un sonido muy limpio, característico de las producciones
-                    del señor Tägtgren, donde resplandecen las melodías de guitarra, siendo una pieza indiscutible del
-                    Black Metal sueco. A diferencia de Hypocrisy, las guitarras están a cargo de Lars Szöke y Mikael
-                    Hedlund, mientras que Peter Tägtgren se ocupa del bajo y la batería. Los tres músicos participan en
-                    las voces, logrando desgarradoras armonías que encajan perfectamente con la atmósfera del disco.</p>
-                <img src="" alt="">
-                <p class="review-paragraph">Siempre que me encanta un disco, siento que es demasiado corto, aunque no
-                    necesariamente lo sea. Sin embargo, en esta ocasión no me equivoco. Mi única crítica es que este
-                    álbum es muy, pero muy corto, con poco menos de 30 minutos de duración, y la última canción es
-                    instrumental, más ruido y atmósfera que otra cosa.</p>
-                <img src="" alt="">
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rnHT0miZbfA?start=1539">
-                    </iframe>
-                </div>
-
-                <p class="review-paragraph">En 1996, llegaría un segundo disco llamado Summon the Beast, que no logró la
-                    misma calidad ni el impacto que tuvo su primer álbum. Tras un par de años, este proyecto regresó a
-                    las sombras, desapareciendo por completo y dejando espacio para el proyecto principal Hypocrisy.</p>
-            </div>
+        <section class="reviews" id="reviews">
+            <!-- Aquí se cargará el contenido reseñado -->
         </section>
-
+        <div class="logo-section">
+            <img src="/img/logoSection1.png" alt="logo 3" class="logo-end">
+        </div>
     </main>
-
-
-
     <footer>
         <div class="footer-wrapper">
-            <p class="footer-copyright">Roberto Rivas A. &copy; 2025</p>
+            <p class="footer-copyright">Roberto Rivas A. © 2025</p>
             <div class="footer-social">
                 <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
@@ -86,6 +49,15 @@
             </div>
         </div>
     </footer>
+    <!-- Firebase App y Firestore (versión compat para API global) -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <!-- SweetAlert2 -->
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Tus scripts -->
+    <script defer src="/js/mail.js"></script>
+    <script defer src="/js/content.js"></script>
+    <!-- emailjs -->
+    <script type="module" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 </body>
-
 </html>

@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Sonidos del Odio</title>
-
+    <title>Eventos - Sonidos del Odio</title>
 </head>
-
 <body>
-
     <header>
         <div class="header-wrapper">
             <div class="logo-wrapper">
-                <img src="/img/logo.png" alt="Sonidos del Odio Logo" class="logo">
+                <img src="/img/bitmap.png" alt="Sonidos del Odio Logo" class="logo">
             </div>
-            <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <nav class="nav-container">
+                <label for="menu-toggle" class="close-btn">
+                    <i class="fa-solid fa-times"></i> <!-- Ícono de "X" -->
+                </label>
                 <ul class="nav-menu">
-                    <li><a href="#reseñas" class="nav-link">Reseñas</a></li>
-                    <li><a href="#conciertos" class="nav-link">Conciertos</a></li>
-                    <li><a href="#suscríbete" class="nav-link">Suscríbete+</a></li>
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html" class="nav-link">Reseñas</a></li>
+                    <li><a href="event.html" class="nav-link">Eventos</a></li>
+                    <li><a href="#suscríbete" class="nav-link" id="suscribete-btn">Suscríbete+</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-
-    <main>
-        <section class="review-container">
-            <div class="review-header">
-                <h2 class="review-title">Agenda Conciertos 2025</h2>
-            </div>
-            <div class="galeria">
-                <div class="galeria-item">
-                    <img src="/img/concierto1.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 1</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="/img/concierto2.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 2</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="/img/concierto3.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 3</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="/img/concierto4.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 4</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="/img/concierto5.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 5</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="/img/concierto6.jpg" alt="" class="galeria-img">
-                    <h3 class="galeria-titulo">Concierto 6</h3>
-                </div>
-            </div> <!-- Cierre correcto del div .galeria -->
-        </section>
+    <main class="main-container">
+        <div class="title">
+            <h2 class="review-title" id="reseñas">EVENTOS</h2>
+        </div>
+        <section class="reviews-container" id="reviews-container"></section>
+        <div class="logo-section">
+            <img src="/img/logoSection1.png" alt="logo 3" class="logo-end">
+        </div>
     </main>
-    
-
-
-
     <footer>
         <div class="footer-wrapper">
-            <p class="footer-copyright">Roberto Rivas A. &copy; 2025</p>
+            <p class="footer-copyright">Roberto Rivas A. © 2025</p>
             <div class="footer-social">
                 <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
@@ -77,6 +50,13 @@
             </div>
         </div>
     </footer>
+    <!-- Firebase App y Firestore (versión compat para API global) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Tus scripts -->
+    <script src="/js/event.js"></script>
+    <script src="/js/mail.js"></script> <!-- Añadimos mail.js para que el SweetAlert funcione -->
 </body>
-
 </html>
