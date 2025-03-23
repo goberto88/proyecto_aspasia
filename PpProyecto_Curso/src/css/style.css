@@ -1,5 +1,15 @@
-/* Estilos generales */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Variables para consistencia */
+:root {
+    --primary-bg: #F4ECD8;
+    --primary-text: #000;
+    --accent-color: #c01010;
+    --footer-bg: #000;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1.3rem;
+    --spacing-lg: 3rem;
+}
 
 * {
     margin: 0;
@@ -13,7 +23,7 @@ html, body {
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: #F4ECD8;
+    background-color: var(--primary-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -25,8 +35,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 0.8rem solid #000;
-    margin: 0 auto 1.3rem;
+    border-bottom: 0.8rem solid var(--primary-text);
+    margin: 0 auto var(--spacing-md);
 }
 
 .logo-wrapper {
@@ -36,7 +46,7 @@ body {
 
 .logo {
     width: 20rem;
-    margin: 1.3rem 0 0.5rem 0;
+    margin: var(--spacing-md) 0 0.5rem 0;
 }
 
 .menu-toggle {
@@ -46,12 +56,12 @@ body {
 .hamburger {
     display: none;
     cursor: pointer;
-    color: #000 !important;
+    color: var(--primary-text);
     z-index: 2000;
 }
 
 .hamburger i {
-    font-size: 2.2rem; /* Tamaño base, se sobrescribe en media query */
+    font-size: 2.2rem;
     color: inherit;
     line-height: 1;
 }
@@ -60,16 +70,12 @@ body {
     display: none;
     cursor: pointer;
     font-size: 2rem;
-    color: #F4ECD8 !important;
+    color: var(--primary-bg);
     padding: 0.5rem;
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 2100;
-}
-
-.close-btn i {
-    color: #F4ECD8 !important;
 }
 
 .nav-container {
@@ -87,7 +93,7 @@ body {
 .nav-menu .nav-link {
     letter-spacing: 0.1rem;
     text-decoration: none;
-    color: #000;
+    color: var(--primary-text);
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -95,10 +101,10 @@ body {
 }
 
 .nav-menu .nav-link:hover {
-    color: #c01010;
+    color: var(--accent-color);
 }
 
-/* mi Home */
+/* Home */
 .home {
     display: flex;
     gap: 0.2rem;
@@ -106,7 +112,7 @@ body {
     justify-content: space-around;
     width: 70%;
     margin: 0 auto;
-    border-bottom: 0.8rem solid #000;
+    border-bottom: 0.8rem solid var(--primary-text);
     padding: 3.8rem 0;
 }
 
@@ -122,29 +128,24 @@ body {
     text-align: justify;
 }
 
-.imagen-container {
-    flex: 1;
-    text-align: center;
-}
-
 .imagen-1 {
     max-width: 15.6rem;
     height: auto;
 }
 
+/* Títulos y contenedores */
 .title {
     width: 100%;
     text-align: center;
-    padding: 3rem 0;
+    padding: var(--spacing-lg) 0;
     font-size: 2.2rem;
     letter-spacing: 0.2rem;
 }
 
-/* Contenedor de reseñas */
 .reviews-container {
     display: grid;
     gap: 0.1rem;
-    margin: 0 auto 1.3rem;
+    margin: 0 auto var(--spacing-md);
     width: 80%;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -160,7 +161,7 @@ body {
     padding: 0.7rem;
     box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #F4ECD8;
+    background-color: var(--primary-bg);
     border-radius: 0.3rem;
     overflow: hidden;
 }
@@ -168,7 +169,7 @@ body {
 .card-link {
     text-align: center;
     text-decoration: none;
-    color: #000;
+    color: var(--primary-text);
     height: 100%;
 }
 
@@ -208,7 +209,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: #000;
+    background-color: var(--footer-bg);
     height: 5rem;
     display: flex;
     justify-content: center;
@@ -221,12 +222,12 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.3rem;
+    padding: 0 var(--spacing-md);
 }
 
 .footer-copyright, i {
     font-size: 0.9rem;
-    color: #F4ECD8;
+    color: var(--primary-bg);
 }
 
 i {
@@ -252,7 +253,7 @@ i:hover {
 .title-content {
     width: 100%;
     text-align: center;
-    padding: 3rem 0 0;
+    padding: var(--spacing-lg) 0 0;
     font-size: 2.2rem;
     letter-spacing: 0.2rem;
 }
@@ -278,7 +279,7 @@ i:hover {
     text-align: justify;
     max-width: 85%;
     line-height: 1.8;
-    padding-bottom: 3rem;
+    padding-bottom: var(--spacing-lg);
 }
 
 .review-img {
@@ -297,12 +298,12 @@ i:hover {
 .video-container iframe,
 .video-container video {
     width: 100%;
-    height: 22.5rem; /* Proporción 16:9 para max-width: 40rem */
+    height: 22.5rem;
 }
 
 /* Sweetalert */
 .btn-confirm {
-    background-color: #000;
+    background-color: var(--primary-text);
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -317,19 +318,19 @@ i:hover {
 }
 
 .popup-custom {
-    color: #000;
-    background-color: #F4ECD8;
+    color: var(--primary-text);
+    background-color: var(--primary-bg);
     font-family: 'Merriweather', serif;
 }
 
 .input-custom {
-    color: #000;
+    color: var(--primary-text);
     font-family: 'Merriweather', serif;
-    border-color: #000;
+    border-color: var(--primary-text);
 }
 
 .title-custom {
-    color: #000;
+    color: var(--primary-text);
     font-family: 'Merriweather', serif;
 }
 
@@ -346,24 +347,18 @@ i:hover {
         position: relative;
     }
 
-    .logo-wrapper {
-        order: 1;
-    }
-
     .logo {
         width: 6rem;
     }
 
     .hamburger {
         display: flex;
-        order: 2;
         align-items: center;
         justify-content: center;
-        padding: 0;
     }
 
     .hamburger i {
-        font-size: 1.5rem !important; /* Tamaño grande y forzado */
+        font-size: 1.5rem !important;
         line-height: 1;
     }
 
@@ -375,7 +370,6 @@ i:hover {
         height: auto;
         background-color: rgba(0, 0, 0, 0.8);
         transform: translateX(-100%);
-        z-index: 1000;
     }
 
     .menu-toggle:checked ~ .nav-container {
@@ -394,12 +388,12 @@ i:hover {
     }
 
     .nav-menu .nav-link {
-        color: #F4ECD8;
+        color: var(--primary-bg);
         font-size: .8rem;
     }
 
     .nav-menu .nav-link:hover {
-        color: #c01010;
+        color: var(--accent-color);
     }
 
     .home {
@@ -442,7 +436,7 @@ i:hover {
 
     .title {
         font-size: 1.3rem;
-        padding: 2rem 0 2rem 0;
+        padding: 2rem 0;
     }
 
     .title-card {
@@ -457,12 +451,7 @@ i:hover {
         width: 90%;
     }
 
-    .title-content {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .subtitle {
+    .title-content, .subtitle {
         max-width: 90%;
         margin: 0 auto;
     }
@@ -501,7 +490,7 @@ i:hover {
     }
 }
 
-/* Tablet (todos los iPads, max-width: 64rem) */
+/* Tablet (max-width: 64rem) */
 @media (max-width: 64rem) and (min-width: 37.5rem) {
     .header-wrapper {
         width: 85%;
@@ -534,11 +523,6 @@ i:hover {
 
     .text-home {
         font-size: 0.9rem;
-    }
-
-    .imagen-container {
-        width: 40%;
-        padding: 0 1rem;
     }
 
     .imagen-1 {
@@ -602,13 +586,5 @@ i:hover {
         width: 65%;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 0.5rem;
-    }
-
-    .galeria {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .galeria-img {
-        max-width: 18.8rem;
     }
 }

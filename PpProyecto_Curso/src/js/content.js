@@ -1,19 +1,17 @@
-// Carga de contenido reseñado
-
-async function fetchPosts() {
-    try {
-        const response = await fetch('http://localhost:1337/api/blogs');
-        if (!response.ok) throw new Error('Error en la solicitud a la API');
-        const data = await response.json();
-        console.log('Datos de fetchPosts:', data);
-        return data;
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-        return { error };
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+    async function fetchPosts() {
+        try {
+            const response = await fetch('http://localhost:1337/api/blogs');
+            if (!response.ok) throw new Error('Error en la solicitud a la API');
+            const data = await response.json();
+            console.log('Datos de fetchPosts:', data);
+            return data;
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            return { error };
+        }
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     console.log('ID obtenido de la URL:', id);
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const postContent = document.createElement('div');
             postContent.classList.add('article-review');
             postContent.innerHTML = `
-                <img src="${post.img_principal ? post.img_principal : 'ruta-de-imagen-placeholder.jpg'}" alt="${post.titulo}" class="review-img">
+                <img src="${post.img_principal || 'ruta-de-imagen-placeholder.jpg'}" alt="${post.titulo}" class="review-img">
                 <p class="review-paragraph">${post.parrafo1}</p>
                 ${post.img2 ? `<img src="${post.img2}" alt="${post.titulo}" class="review-img">` : ''}
                 <p class="review-paragraph">${post.parrafo2}</p>
@@ -55,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${post.img4 ? `<img src="${post.img4}" alt="${post.titulo}" class="review-img">` : ''}
                 <p class="review-paragraph">${post.parrafo5}</p>
                 ${post.parrafo6 ? `<p class="review-paragraph">${post.parrafo6}</p>` : ''}
-                
                 ${post.parrafo7 ? `<p class="review-paragraph">${post.parrafo7}</p>` : ''}
                 ${post.parrafo8 ? `<p class="review-paragraph">${post.parrafo8}</p>` : ''}
                 ${post.img5 ? `<img src="${post.img5}" alt="${post.titulo}" class="review-img">` : ''}
@@ -72,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${post.parrafo18 ? `<p class="review-paragraph">${post.parrafo18}</p>` : ''}
                 ${post.parrafo19 ? `<p class="review-paragraph">${post.parrafo19}</p>` : ''}
                 ${post.videos ? `<div class="video-container"><iframe width="560" height="315" src="${post.videos}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>` : ''}
-                 ${post.video2 ? `<div class="video-container"><iframe width="560" height="315" src="${post.video2}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>` : ''}
+                ${post.video2 ? `<div class="video-container"><iframe width="560" height="315" src="${post.video2}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>` : ''}
             `;
             container.appendChild(postContainer);
             container.appendChild(postContent);
