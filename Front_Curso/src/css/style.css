@@ -3,9 +3,9 @@
 /* Variables para consistencia */
 :root {
     --primary-bg: #F4ECD8;
-    --primary-text: #000;
-    --accent-color: #c01010;
-    --footer-bg: #000;
+    --primary-text: #070606;
+    --accent-color: #686565;
+    --footer-bg: #1a1717;
     --spacing-sm: 0.5rem;
     --spacing-md: 1.3rem;
     --spacing-lg: 3rem;
@@ -138,8 +138,16 @@ body {
     width: 100%;
     text-align: center;
     padding: var(--spacing-lg) 0;
-    font-size: 2.2rem;
     letter-spacing: 0.2rem;
+}
+
+
+.title h1.review-title {
+    font-size: 2.2rem;
+    margin: 0; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    line-height: 1.2;
 }
 
 .reviews-container {
@@ -301,7 +309,7 @@ i:hover {
     height: 22.5rem;
 }
 
-/* Sweetalert */
+/* Cambios en sweetalert  */
 .btn-confirm {
     background-color: var(--primary-text);
     color: white;
@@ -336,7 +344,7 @@ i:hover {
 
 /* Media Queries */
 
-/* Celular (max-width: 600px) */
+/* Celulares (max-width: 600px) */
 @media (max-width: 37.5rem) {
     .header-wrapper {
         width: 90%;
@@ -434,9 +442,10 @@ i:hover {
         object-fit: contain;
     }
 
-    .title {
+    .title h1.review-title {
         font-size: 1.3rem;
         padding: 2rem 0;
+        word-wrap: break-word;
     }
 
     .title-card {
@@ -490,7 +499,7 @@ i:hover {
     }
 }
 
-/* Tablet (max-width: 64rem) */
+/* Tablet , ipad otros... */
 @media (max-width: 64rem) and (min-width: 37.5rem) {
     .header-wrapper {
         width: 85%;
@@ -547,8 +556,9 @@ i:hover {
         object-fit: contain;
     }
 
-    .title {
+    .title h1.review-title {
         font-size: 1.5rem;
+        word-wrap: break-word;
     }
 
     .title-card {
@@ -572,7 +582,7 @@ i:hover {
     }
 }
 
-/* Desktop (min-width: 64rem) */
+/* Desktop */
 @media (min-width: 64rem) {
     .header-wrapper {
         width: 70%;
@@ -586,5 +596,9 @@ i:hover {
         width: 65%;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 0.5rem;
+    }
+
+    .title h1.review-title {
+        font-size: 2.2rem;
     }
 }
