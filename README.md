@@ -54,5 +54,4 @@
 ![Inicio](/img_README/R3.png)
 ![Inicio](/img_README/R5.png)
 ![Reseñas](/img_README/R6.png)
-![Reseñas](/img_README/R.png)
 ![Eventos](/img_README/R2.png)
