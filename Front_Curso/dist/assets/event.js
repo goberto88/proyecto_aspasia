@@ -1,0 +1,7 @@
+import"./chunks/mail.js";document.addEventListener("DOMContentLoaded",()=>{async function s(){try{const e=await fetch("http://localhost:1337/api/concerts");if(!e.ok)throw new Error("Error en la solicitud a la API");const r=await e.json();return console.log("Datos de fetchPosts (concerts):",r),r}catch(e){return console.error("Error fetching concerts:",e),{error:e}}}function a(e){const[r,n,t]=e.split("-");return`${t}-${n}-${r}`}function d(e,r){r.innerHTML="";const n=new Date().setHours(0,0,0,0);e.forEach(t=>{if(new Date(a(t.fecha)).setHours(0,0,0,0)>=n){const o=document.createElement("div");o.classList.add("card"),o.dataset.fecha=t.fecha,o.innerHTML=`
+                    <a class="card-link" href="${t.link}">
+                        <img src="${t.poster}" alt="${t.title}" class="card-image">
+                        <h4 class="title-card">${t.title}</h4>
+                        <p class="date">${t.fecha}</p>
+                    </a>
+                `,r.appendChild(o)}})}function i(e){const r=new Date().setHours(0,0,0,0);e.querySelectorAll(".card").forEach(t=>{const c=t.dataset.fecha;new Date(a(c)).setHours(0,0,0,0)<r&&t.remove()})}s().then(e=>{if(e.error){console.error("Error:",e.error);return}const r=e.data,n=document.getElementById("reviews-container");if(!n){console.error('No se encontró el elemento con ID "reviews-container"');return}r.sort((t,c)=>{const o=new Date(a(t.fecha)),l=new Date(a(c.fecha));return o-l}),d(r,n),setInterval(()=>i(n),24*60*60*1e3)})});
